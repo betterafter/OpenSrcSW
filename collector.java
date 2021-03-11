@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 import javax.lang.model.element.Element;
+import javax.swing.text.html.HTML;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
@@ -11,6 +12,8 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
+
+
 
 
 public class collector{
@@ -26,6 +29,11 @@ public class collector{
 
         org.w3c.dom.Element docs = doc.createElement("docs");
         doc.appendChild(docs);
+        doc.createTextNode("\n\n\n\n");
+        doc.createTextNode("!!!!!!!!!!!!");
+        
+        docs.appendChild(doc.createTextNode("\n"));
+        docs.appendChild(doc.createTextNode("\t"));
 
         int index = 0;
         for (File info : new File(path).listFiles()) {
@@ -50,14 +58,18 @@ public class collector{
 
     public static void HTML_Parser(Document doc, org.w3c.dom.Element docs, int index, File file) throws Exception{
 
+        
+
         String content = "";
         FileReader fr = new FileReader(file);
         BufferedReader bf = new BufferedReader(fr);
 
         String readLine = "";
         while((readLine = bf.readLine()) != null){
-            content += readLine;
+            content += readLine.trim();
         }
+
+        bf.close();
     
         String title, body;
         String title_startTag = "<title>", title_endTag = "</title>";
@@ -90,14 +102,23 @@ public class collector{
         org.w3c.dom.Element t = doc.createElement("title");
         org.w3c.dom.Element b = doc.createElement("body");
 
-        did.setAttribute("id", Integer.toString(index + 1));
-
+        did.setAttribute("id", Integer.toString(index));
+        did.appendChild(doc.createTextNode("\n"));
+        did.appendChild(doc.createTextNode("\t\t"));
         docs.appendChild(did);
 
         did.appendChild(t);
         t.appendChild(doc.createTextNode(title));
+        did.appendChild(doc.createTextNode("\n"));
+        did.appendChild(doc.createTextNode("\t\t"));
         did.appendChild(b);
         b.appendChild(doc.createTextNode(body));
+        did.appendChild(doc.createTextNode("\n"));
+        did.appendChild(doc.createTextNode("\t"));
+        docs.appendChild(doc.createTextNode("\n"));
+        docs.appendChild(doc.createTextNode("\t"));
+        // did.appendChild(doc.createTextNode("\n"));
+        // did.appendChild(doc.createTextNode("\t"));
     }
 
 
