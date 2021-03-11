@@ -26,15 +26,10 @@ public class collector{
         DocumentBuilderFactory dFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dFactory.newDocumentBuilder();
         Document doc = dBuilder.newDocument();
+        doc.setXmlStandalone(true);
 
         org.w3c.dom.Element docs = doc.createElement("docs");
         doc.appendChild(docs);
-        doc.createTextNode("\n\n\n\n");
-        doc.createTextNode("!!!!!!!!!!!!");
-        
-        docs.appendChild(doc.createTextNode("\n"));
-        docs.appendChild(doc.createTextNode("\t"));
-
         int index = 0;
         for (File info : new File(path).listFiles()) {
             if(info.isFile()){
@@ -50,6 +45,10 @@ public class collector{
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer Transformer = transformerFactory.newTransformer();
         Transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+        Transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4"); //정렬 스페이스4칸
+        Transformer.setOutputProperty(OutputKeys.INDENT, "yes"); //들여쓰기
+        Transformer.setOutputProperty(OutputKeys.DOCTYPE_PUBLIC, "yes"); //doc.setXmlStandalone(true); 했을때 붙어서 출력되는부분 개행
+
 
         DOMSource dom = new DOMSource(doc);
         StreamResult res = new StreamResult(new File("collection.xml"));
@@ -103,22 +102,11 @@ public class collector{
         org.w3c.dom.Element b = doc.createElement("body");
 
         did.setAttribute("id", Integer.toString(index));
-        did.appendChild(doc.createTextNode("\n"));
-        did.appendChild(doc.createTextNode("\t\t"));
         docs.appendChild(did);
-
         did.appendChild(t);
         t.appendChild(doc.createTextNode(title));
-        did.appendChild(doc.createTextNode("\n"));
-        did.appendChild(doc.createTextNode("\t\t"));
         did.appendChild(b);
         b.appendChild(doc.createTextNode(body));
-        did.appendChild(doc.createTextNode("\n"));
-        did.appendChild(doc.createTextNode("\t"));
-        docs.appendChild(doc.createTextNode("\n"));
-        docs.appendChild(doc.createTextNode("\t"));
-        // did.appendChild(doc.createTextNode("\n"));
-        // did.appendChild(doc.createTextNode("\t"));
     }
 
 
