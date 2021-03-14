@@ -1,8 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
 
-import javax.lang.model.element.Element;
-import javax.swing.text.html.HTML;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
