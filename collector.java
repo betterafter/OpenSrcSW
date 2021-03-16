@@ -9,6 +9,9 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.snu.ids.kkma.index.Keyword;
+import org.snu.ids.kkma.index.KeywordExtractor;
+import org.snu.ids.kkma.index.KeywordList;
 import org.w3c.dom.Document;
 
 
@@ -16,9 +19,10 @@ import org.w3c.dom.Document;
 
 public class collector{
 
-    final static String path = "/Users/singiyeol/Desktop/학교자료/4-1/opensource/SimpleIR";
+    final static String path = "/Users/singiyeol/Desktop/학교자료/4-1/opensource/SimpleIR/data";
     static ArrayList<File> files = new ArrayList<>();
 
+    // ---------------------------------------------- 실습 1 ----------------------------------------------------------------
     public static void HTML_Searcher() throws Exception {
 
         DocumentBuilderFactory dFactory = DocumentBuilderFactory.newInstance();
@@ -106,16 +110,10 @@ public class collector{
         did.appendChild(b);
         b.appendChild(doc.createTextNode(body));
     }
+    // -------------------------------------------------------------------------------------------------------------------------
 
-
-
-    public static void main(String[] args) {
-        try{
-            HTML_Searcher();
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
+    public void start() throws Exception{
+        HTML_Searcher();
     }
 }
 
