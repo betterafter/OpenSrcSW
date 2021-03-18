@@ -1,6 +1,6 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "/Users/singiyeol/Desktop/학교자료/4-1/opensource/kkma-2.1.jar"
+        "/Users/singiyeol/Desktop/학교자료/4-1/opensource/SimpleIR/lib/kkma-2.1.jar"
     ]
 }
