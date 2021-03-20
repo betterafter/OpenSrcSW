@@ -8,7 +8,6 @@ import org.snu.ids.kkma.index.KeywordList;
 public class kuir {
 
     public static void main(String[] args) {
-
         try{
             makeCollection collection = new makeCollection();
             makeKeyword keyword = new makeKeyword();

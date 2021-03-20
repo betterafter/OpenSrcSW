@@ -47,7 +47,6 @@ public class makeCollection {
         Transformer.setOutputProperty(OutputKeys.INDENT, "yes"); //들여쓰기
         Transformer.setOutputProperty(OutputKeys.DOCTYPE_PUBLIC, "yes"); //doc.setXmlStandalone(true); 했을때 붙어서 출력되는부분 개행
 
-
         DOMSource dom = new DOMSource(doc);
         StreamResult res = new StreamResult(new File("collection.xml"));
         Transformer.transform(dom, res);
