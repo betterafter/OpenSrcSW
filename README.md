@@ -1,7 +1,17 @@
 # OpenSrcSW
 
+###### 건국대학교 오픈소스 SW 입문 (2021 1학기) 수업을 위한 repository 입니다. 
+
+##### 개발환경
+mac OS - terimnal, Source Tree (git), Visual Studio Code  
+Widows - cmd, Eclipse
+
+에서 실습 및 테스트 진행 중 입니다.
+
+<br/><br/>
+
 ## kuir 
-자바 클래스들을 실행해주는 main 클래스
+자바 클래스들을 실행해주는 main 클래스 <b>java kuir 옵션</b>으로 다른 클래스를 실행해준다. 각 클래스를 실행하기 위한 옵션과 경로 등은 아래에서 기술. 
 
 <br/><br/><br/>
 
