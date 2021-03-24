@@ -41,6 +41,8 @@ $$
 
 $$ W_{x,y}  = tf_{x,y} \times \log{ \left(N \over df_x \right) } $$
 
+![수식](https://latex.codecogs.com/gif.latex?W_%7Bx%2Cy%7D%20%3D%20tf_%7Bx%2Cy%7D%20%5Ctimes%20%5Clog%7B%20%5Cleft%28N%20%5Cover%20df_x%20%5Cright%29%20%7D)
+
 ##### 실행 후 생성되는 파일
 - index.post
 
