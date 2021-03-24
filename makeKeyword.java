@@ -41,8 +41,8 @@ public class makeKeyword {
         bf.close();
 
         String fbody = "<body>", ebody = "</body>";
-        int idx = 0;
-        int fidx = content.indexOf(fbody, idx), eidx = content.indexOf(ebody, fidx);  
+        int idx = 1;
+        int fidx = content.indexOf(fbody), eidx = content.indexOf(ebody, fidx);  
         while(fidx != -1){
 
             String text = content.substring(fidx + fbody.length(), eidx);
