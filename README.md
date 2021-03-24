@@ -36,8 +36,9 @@ makeKeyword로 생성된 index.xml을 가져와 키워드 별 문서 당 가중�
 <small>x : 단어, y : 문서, tf : 문서 y에서 단어 x가 등장한 횟수
 df : 단어 x가 몇개의 문서에서 등장하는 지, N : 전체 문서의 수 일 때, </small>
 
-<img src="https://latex.codecogs.com/svg.latex?\;W_{x,y}  = tf_{x,y} \times \log{ \left(N \over df_x \right) }"/>  
+<img src="https://latex.codecogs.com/svg.latex?\;W_{x,y}  = tf_{x,y} \times \log{ \left(N \over df_x \right) }" title="W_{x,y}  = tf_{x,y} \times \log{ \left(N \over df_x \right) }" />  
 
+<img src="https://latex.codecogs.com/svg.latex?\;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" title="\x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />  
 
 
 
