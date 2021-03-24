@@ -38,10 +38,6 @@ df : 단어 x가 몇개의 문서에서 등장하는 지, N : 전체 문서의 �
 
 <img src="https://latex.codecogs.com/svg.latex?W_{x,y}%20%20=%20tf_{x,y}%20\times%20\log{%20\left(N%20\over%20df_x%20\right)%20}" title="https://latex.codecogs.com/svg.latex?W_{x,y}%20%20=%20tf_{x,y}%20\times%20\log{%20\left(N%20\over%20df_x%20\right)%20}" />  
 
-https://latex.codecogs.com/svg.latex?W_{x,y}%20%20=%20tf_{x,y}%20\times%20\log{%20\left(N%20\over%20df_x%20\right)%20}
-
-<img src="https://latex.codecogs.com/svg.latex?\;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" title="\x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />  
-
 
 
 ##### 실행 후 생성되는 파일
