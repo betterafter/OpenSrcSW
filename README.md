@@ -37,7 +37,7 @@ _{tf_{x,y} \ : \ 문서 \ y에서 \ 단어 \ x가 \ 등장한 \ 횟수} \\\\
 _{df_{x} \ : \ 단어 \ x가 \ 몇 \ 개의 \ 문서에서 \ 등장하는지} \\\\
 _{N \ : \ 전체 \ 문서의 \ 수} \ _{일 \ 때,} $$
 
-$$ W_{x,y}  = tf_{x,y} \times \log{ \left(N \over df_x \right) } $$
+$ W_{x,y}  = tf_{x,y} \times \log{ \left(N \over df_x \right) } $
 
 ##### 실행 후 생성되는 파일
 - index.post
