@@ -50,6 +50,7 @@ df : 단어 x가 몇개의 문서에서 등장하는 지, N : 전체 문서의 �
 
 ##### 실행 후 생성되는 파일
 - index.post
+- result.txt : index.post를 확인하기 위해 index.post의 hashmap을 result.txt에 출력함 (start 함수에서 주석처리 된 부분을 주석 해제하였을 때 생성)
 
 
 ##### 사용법
