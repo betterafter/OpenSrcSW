@@ -39,7 +39,7 @@ html 파일들을 사용자가 원하는 경로에서 가져와 하나의 xml �
 
 <br/><br/><br/>
 
-## makeInvertedFile
+## indexer
 makeKeyword로 생성된 index.xml을 가져와 키워드 별 문서 당 가중치를 계산하는 프로그램. 가중치는 아래의 식에 의해 계산함. 생성 된 파일은 역파일 (Invertedd File) 형태로 저장됨.
 
 

@@ -11,6 +11,7 @@ public class kuir {
         try{
             makeCollection collection = new makeCollection();
             makeKeyword keyword = new makeKeyword();
+            indexer indexer = new indexer();
 
             for(int i = 0; i < args.length; i++){
                 if(args[0].equals("-c")){
@@ -20,6 +21,10 @@ public class kuir {
                 else if(args[0].equals("-k")){
                     final String path = args[1];
                     keyword.start(path);
+                }
+                else if(args[0].equals("-i")){
+                    final String path = args[1];
+                    indexer.start(path);
                 }
             }
         }
