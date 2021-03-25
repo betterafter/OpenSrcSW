@@ -8,7 +8,6 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Set;
 
 public class indexer {
 
@@ -28,7 +27,6 @@ public class indexer {
 
     // index.xml의 body를 doc 클래스로 저장
     public void parser(final String path) throws Exception {
-
         String content = "";
         String sdoc = "<doc id=\"", edoc = "</doc>";
         String sbody = "<body>", ebody = "</body>";
@@ -87,6 +85,8 @@ public class indexer {
             docList.add(d);
             sidx = content.indexOf(sdoc, eidx); eidx = content.indexOf(edoc, sidx);
         }
+        
+        writeInvertedFile();
     }
 
     @SuppressWarnings({ "rawTypes", "unchecked", "nls" })
@@ -118,7 +118,6 @@ public class indexer {
                 else{
                     ArrayList<Object> childList = (ArrayList<Object>)indexMap.get(keyword);
                     childList.add(d.id); childList.add(weight(value, df.get(keyword), docList.size()));
-                    indexMap.put(keyword, childList);
                 }
             }
         }
@@ -138,18 +137,15 @@ public class indexer {
         Object object = objectInputStream.readObject();
         objectInputStream.close();
 
+        
         HashMap hashMap = (HashMap)object;
         Iterator<String> it = hashMap.keySet().iterator();
         while(it.hasNext()){
             String keyword = it.next();
             ArrayList<Object> value = (ArrayList<Object>) hashMap.get(keyword);
+
             resultFile.write((keyword + '\n').getBytes());
-            for(int i = 0; i < value.size(); i+=2){
-                int id = (int)value.get(i); double weight = (double)value.get(i + 1);
-                String con = "[ ";
-                con = con + id + " , " + weight + " ]" + "   ";
-                resultFile.write(con.getBytes());
-            }
+            resultFile.write(value.toString().getBytes());
             resultFile.write(("\n").getBytes());
         }
 
@@ -160,7 +156,6 @@ public class indexer {
 
     public void start(final String path) throws Exception{
         parser(path);
-        writeInvertedFile();
 
         // String readPath = "./index.post";
         // readInvertedFile(readPath);
