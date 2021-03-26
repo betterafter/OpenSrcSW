@@ -22,7 +22,7 @@ public class indexer {
 
 
     public double weight(double tf, double df, double N){
-        return Math.round(tf * Math.log10(N / df) * 10) / 10.0;
+        return Math.round(tf * Math.log(N / df) * 100) / 100.0;
     }
 
     // index.xml의 body를 doc 클래스로 저장
