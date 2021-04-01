@@ -12,7 +12,10 @@ public class kuir {
             makeCollection collection = new makeCollection();
             makeKeyword keyword = new makeKeyword();
             indexer indexer = new indexer();
-            
+            searcher searcher = new searcher();
+
+            if(args.length == 0) return;
+
             if(args[0].equals("-c")){
                 final String path = args[1];
                 collection.start(path);
@@ -23,8 +26,13 @@ public class kuir {
             }
             else if(args[0].equals("-i")){
                 final String path = args[1];
-                indexer.start(path);
-                
+                indexer.start(path); 
+            }
+            else if(args[0].equals("-s") && args[2].equals("-q")){
+                final String path = args[1];
+                final String query = args[3];
+                final String collectionPath = "./collection.xml";
+                searcher.start(path, query, collectionPath);
             }
         }
         catch(Exception e){

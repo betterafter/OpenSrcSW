@@ -55,3 +55,17 @@ df : 단어 x가 몇개의 문서에서 등장하는 지, N : 전체 문서의 �
 
 ##### 사용법
 - java kuir -i [path/index.xml]
+
+<br/><br/><br/>
+## searcher
+- index.post를 지정한 경로에서 가져와 -q 뒤에 query (검색할 문장)을 입력하여 문서 간의 유사도를 계산하여 입력한 query와 가장 유사한 문서 중 상위 3개의 문서의 title을 출력. 이 때 유사도가 동일할 경우 문서의 id가 빠른 순서대로 출력하게 됨.
+- 문서의 title은 collection.xml 파일을 가져와 (kuir 함수의 collectionPath 변수 안에 경로가 저장되어 searcher.start로 해당 변수를 보냄) 파일의 title과 id를 매칭.
+- System.out.println으로 출력.
+
+
+##### 실행 후 생성되는 파일
+- 생성되는 파일 없음 (System.out.println으로 결과 출력)
+
+
+##### 사용법
+- java kuir -s [path/index.post] -q "입력할 쿼리문"
