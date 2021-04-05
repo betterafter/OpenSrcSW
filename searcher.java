@@ -61,7 +61,7 @@ public class searcher{
         }
     }
 
-    public void CalcSim(String query, String path) throws Exception {
+    public void Analyzer(String query, String path) throws Exception {
 
         KeywordExtractor ke = new KeywordExtractor();
         KeywordList kl = ke.extractKeyword(query, true);
@@ -84,7 +84,9 @@ public class searcher{
         HashMap hashMap = (HashMap)object;
 
         int documentSize = DocumentIdMap.size();
-        double[] Qid = new double[documentSize];
+        ArrayList<ArrayList<Double> > docWeight = new ArrayList<>();
+        for(int i = 0; i < documentSize + 1; i++) docWeight.add(new ArrayList<>());
+
         // query에서 추출한 keyword를 탐색하면서 Qid에 저장
         Iterator<String> it = keywordMap.keySet().iterator();
         while(it.hasNext()){
@@ -92,11 +94,14 @@ public class searcher{
             ArrayList<Object> value = (ArrayList<Object>) hashMap.get(keyword);
             if(value == null) continue;
             for(int i = 0; i < value.size(); i+=2){
+
                 int id = (int)value.get(i);
-                double weight = (double)value.get(i + 1);
-                Qid[id] += keywordMap.get(keyword) * weight;
+                docWeight.get(id).add((double)keywordMap.get(keyword));
+                docWeight.get(id).add((double)value.get(i + 1));
             }
         }
+
+        double[] Qid = CalcSim(documentSize,docWeight);
 
         HashMap<Integer, Double> sortMap = new HashMap<>(); 
         for(int i = 0; i < documentSize; i++){ 
@@ -109,8 +114,28 @@ public class searcher{
             int id = sortedList.get(i);
             System.out.println(DocumentIdMap.get(id));
         }
-        
+    
     }
+
+    public double[] CalcSim(int documentSize, ArrayList<ArrayList<Double> > docWeight){
+
+        double[] Qid = new double[documentSize + 1];
+
+        for(int i = 1; i <= documentSize; i++){
+            for(int j = 0; j < docWeight.get(i).size(); j+=2){
+                Qid[i] += docWeight.get(i).get(j) * docWeight.get(i).get(j + 1); 
+            }
+        }
+
+        return Qid;
+    }
+
+    // 0. master 브랜치에 체크아웃한다.
+    // 1. searcher를 searcher_2의 내용으로 바꾼다. 이 때 바뀔 내용은 지운다. master에 우선 커밋 & 푸쉬한다.
+    // 2. feature -> master로 머지해서 충돌을 발생시켜본다. 완전 같은 내용에서 CalcSim만 조금 달라졌으니 충돌이 날 것이다.
+    // 3. feature 브랜치로 이동해서 CalcSim을 InnerProduct로 바꾼다. (searcher3로 바꾼다)
+    // 4. master 브랜치로 체크아웃한 후 feature 브랜치를 머지한다.
+    // 5. master 브랜치의 머지된 searcher의 CalcSim에서 InnerProduct를 사용하도록 구현한다.
 
     public static ArrayList<Integer> DocumentSort(final HashMap<Integer, Double> sortMap){
         ArrayList<Integer> sortedList = new ArrayList<>();
@@ -130,6 +155,6 @@ public class searcher{
 
     public void start(String path, String query, String collectionPath) throws Exception{
         getDocumentTitleById(collectionPath);
-        CalcSim(query, path);
+        Analyzer(query, path);
     }
 }

@@ -30,7 +30,10 @@ public class kuir {
             }
             else if(args[0].equals("-s") && args[2].equals("-q")){
                 final String path = args[1];
-                final String query = args[3];
+                String query = "";
+                for(int i = 3; i < args.length; i++){
+                    query += args[i];
+                }
                 final String collectionPath = "./collection.xml";
                 searcher.start(path, query, collectionPath);
             }
