@@ -33,6 +33,7 @@ public class kuir {
                 String query = "";
                 for(int i = 3; i < args.length; i++){
                     query += args[i];
+                    query += " ";
                 }
                 final String collectionPath = "./collection.xml";
                 searcher.start(path, query, collectionPath);
