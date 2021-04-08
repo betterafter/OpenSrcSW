@@ -118,7 +118,6 @@ public class searcher{
             if(div1 != 0 && div2 != 0)
                 Qid[i] = Qid[i] / ( Math.sqrt(divider1[i]) * Math.sqrt(divider2[i]) );
         }
-
         return Qid;
     }
 
