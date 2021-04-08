@@ -72,10 +72,10 @@ df : 단어 x가 몇개의 문서에서 등장하는 지, N : 전체 문서의 �
 
 <small>query문에서의 각 키워드에 대한 weight(TF)를 아래 첨자가 q인 w로 나타내고, 문서에서 키워드에 대한 weight을 아래 첨자가 문서의 id인 방식으로 나타낸다면 내적을 구하는 방법은 아래와 같다. </small>
 
-<img src="https://latex.codecogs.com/svg.latex?Q\cdot id _{0} = w _{q}^{1} w _{0}^{1} + w _{q}^{2} w _{0}^{2} + w _{q}^{3} w _{0}^{3} + w _{q}^{4} w _{0}^{4}" title="https://latex.codecogs.com/svg.latex?Q\cdot id _{0} = w _{q}^{1} w _{0}^{1} + w _{q}^{2} w _{0}^{2} + w _{q}^{3} w _{0}^{3} + w _{q}^{4} w _{0}^{4}" /></img>
-<img src="https://latex.codecogs.com/svg.latex?Q\cdot id _{1} = w _{q}^{1} w _{1}^{1} + w _{q}^{2} w _{1}^{2} + w _{q}^{3} w _{1}^{3} + w _{q}^{4} w _{1}^{4}" title="https://latex.codecogs.com/svg.latex?Q\cdot id _{1} = w _{q}^{1} w _{1}^{1} + w _{q}^{2} w _{1}^{2} + w _{q}^{3} w _{1}^{3} + w _{q}^{4} w _{1}^{4}" /></img>
-<img src="https://latex.codecogs.com/svg.latex?Q\cdot id _{2} = w _{q}^{1} w _{2}^{1} + w _{q}^{2} w _{2}^{2} + w _{q}^{3} w _{2}^{3} + w _{q}^{4} w _{2}^{4}" title="https://latex.codecogs.com/svg.latex?Q\cdot id _{2} = w _{q}^{1} w _{2}^{1} + w _{q}^{2} w _{2}^{2} + w _{q}^{3} w _{2}^{3} + w _{q}^{4} w _{2}^{4}" /></img>
-<img src="https://latex.codecogs.com/svg.latex?Q\cdot id _{3} = w _{q}^{1} w _{3}^{1} + w _{q}^{2} w _{3}^{2} + w _{q}^{3} w _{3}^{3} + w _{q}^{4} w _{3}^{4}" title="https://latex.codecogs.com/svg.latex?Q\cdot id _{3} = w _{q}^{1} w _{3}^{1} + w _{q}^{2} w _{3}^{2} + w _{q}^{3} w _{3}^{3} + w _{q}^{4} w _{3}^{4}" /></img>
+<img src="https://latex.codecogs.com/svg.latex?Q\cdot%20id%20_{0}%20=%20w%20_{q}^{1}%20w%20_{0}^{1}%20+%20w%20_{q}^{2}%20w%20_{0}^{2}%20+%20w%20_{q}^{3}%20w%20_{0}^{3}%20+%20w%20_{q}^{4}%20w%20_{0}^{4}" title="https://latex.codecogs.com/svg.latex?Q\cdot%20id%20_{0}%20=%20w%20_{q}^{1}%20w%20_{0}^{1}%20+%20w%20_{q}^{2}%20w%20_{0}^{2}%20+%20w%20_{q}^{3}%20w%20_{0}^{3}%20+%20w%20_{q}^{4}%20w%20_{0}^{4}" /></img>
+<img src="https://latex.codecogs.com/svg.latex?Q\cdot%20id%20_{1}%20=%20w%20_{q}^{1}%20w%20_{1}^{1}%20+%20w%20_{q}^{2}%20w%20_{1}^{2}%20+%20w%20_{q}^{3}%20w%20_{1}^{3}%20+%20w%20_{q}^{4}%20w%20_{1}^{4}" title="https://latex.codecogs.com/svg.latex?Q\cdot%20id%20_{1}%20=%20w%20_{q}^{1}%20w%20_{1}^{1}%20+%20w%20_{q}^{2}%20w%20_{1}^{2}%20+%20w%20_{q}^{3}%20w%20_{1}^{3}%20+%20w%20_{q}^{4}%20w%20_{1}^{4}" /></img>
+<img src="https://latex.codecogs.com/svg.latex?Q\cdot%20id%20_{2}%20=%20w%20_{q}^{1}%20w%20_{2}^{1}%20+%20w%20_{q}^{2}%20w%20_{2}^{2}%20+%20w%20_{q}^{3}%20w%20_{2}^{3}%20+%20w%20_{q}^{4}%20w%20_{2}^{4}" title="https://latex.codecogs.com/svg.latex?Q\cdot%20id%20_{2}%20=%20w%20_{q}^{1}%20w%20_{2}^{1}%20+%20w%20_{q}^{2}%20w%20_{2}^{2}%20+%20w%20_{q}^{3}%20w%20_{2}^{3}%20+%20w%20_{q}^{4}%20w%20_{2}^{4}" /></img>
+<img src="https://latex.codecogs.com/svg.latex?Q\cdot%20id%20_{3}%20=%20w%20_{q}^{1}%20w%20_{3}^{1}%20+%20w%20_{q}^{2}%20w%20_{3}^{2}%20+%20w%20_{q}^{3}%20w%20_{3}^{3}%20+%20w%20_{q}^{4}%20w%20_{3}^{4}" title="https://latex.codecogs.com/svg.latex?Q\cdot%20id%20_{3}%20=%20w%20_{q}^{1}%20w%20_{3}^{1}%20+%20w%20_{q}^{2}%20w%20_{3}^{2}%20+%20w%20_{q}^{3}%20w%20_{3}^{3}%20+%20w%20_{q}^{4}%20w%20_{3}^{4}" /></img>
 
 
 <br/>
@@ -83,13 +83,11 @@ df : 단어 x가 몇개의 문서에서 등장하는 지, N : 전체 문서의 �
 
 <small>query문에서의 각 키워드에 대한 weight(TF)를 아래 첨자가 q인 w로 나타내고, 문서에서 키워드에 대한 weight을 아래 첨자가 문서의 id인 방식으로 나타낸다면 위에서 구한 내적과 코사인 유사도 공식을 이용하여 새로운 유사도를 구할 수 있다. 코사인 유사도 공식이 아래와 같을 때,</small>
 
-<img src="https://latex.codecogs.com/svg.latex?cos(\theta ) = \frac{A \cdot B}{\left\| A\right\| \left\| B\right\|} = \frac{\left| A \cdot B\right|}{\sqrt{A}\sqrt{B}}" title="https://latex.codecogs.com/svg.latex?cos(\theta ) = \frac{A \cdot B}{\left\| A\right\| \left\| B\right\|} = \frac{\left| A \cdot B\right|}{\sqrt{A}\sqrt{B}}" />
+<img src="https://latex.codecogs.com/svg.latex?cos(\theta)=\frac{A\cdot%20B}{\left\|A\right\|\left\|B\right\|}=\frac{\left|A\cdot%20B\right|}{\sqrt{A}\sqrt{B}}" title="https://latex.codecogs.com/svg.latex?cos(\theta)=\frac{A\cdot%20B}{\left\|A\right\|\left\|B\right\|}=\frac{\left|A\cdot%20B\right|}{\sqrt{A}\sqrt{B}}" />
 <br/><br/>
 <small>이 때, Qid는 위의 내적 유사도의 값이다. 따라서 코사인 유사도 공식과 내적의 값을 알면 모든 문서의 유사도를 구할 수 있다. 아래는 0번 문서에 대한 유사도만 구한 것이며, 다른 문서도 같은 방식으로 구해준다. </small> 
 
-<img src="https://latex.codecogs.com/svg.latex?Sim (Q, id _{0}) =\frac{Q \cdot id _{0}}{\sqrt{(w _{q}^{1}) ^{2} + (w _{q}^{2}) ^{2} + (w _{q}^{3}) ^{2} + (w _{q}^{4}) ^{2}} \sqrt{(w _{0}^{1}) ^{2} + (w _{0}^{2}) ^{2} + (w _{0}^{3}) ^{2} + (w _{0}^{4}) ^{2}}} 
-" title="https://latex.codecogs.com/svg.latex?Sim (Q, id _{0}) =\frac{Q \cdot id _{0}}{\sqrt{(w _{q}^{1}) ^{2} + (w _{q}^{2}) ^{2} + (w _{q}^{3}) ^{2} + (w _{q}^{4}) ^{2}} \sqrt{(w _{0}^{1}) ^{2} + (w _{0}^{2}) ^{2} + (w _{0}^{3}) ^{2} + (w _{0}^{4}) ^{2}}} 
-" />
+<img src="https://latex.codecogs.com/svg.latex?Sim%20(Q,id_{0})=\frac{Q\cdot%20id_{0}}{\sqrt{(w_{q}^{1})^{2}+(w_{q}^{2})^{2}+(w_{q}^{3})^{2}+(w_{q}^{4})^{2}}\sqrt{(w_{0}^{1})^{2}+(w_{0}^{2})^{2}+(w_{0}^{3})^{2}+(w_{0}^{4})^{2}}}" title="https://latex.codecogs.com/svg.latex?Sim%20(Q,id_{0})=\frac{Q\cdot%20id_{0}}{\sqrt{(w_{q}^{1})^{2}+(w_{q}^{2})^{2}+(w_{q}^{3})^{2}+(w_{q}^{4})^{2}}\sqrt{(w_{0}^{1})^{2}+(w_{0}^{2})^{2}+(w_{0}^{3})^{2}+(w_{0}^{4})^{2}}}" />
 
 <br/>
 
