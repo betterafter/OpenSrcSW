@@ -100,24 +100,47 @@ public class searcher{
                 docWeight.get(id).add((double)value.get(i + 1));
             }
         }
+
+        double[] Qid = CalcSim(documentSize,docWeight);
+
+        HashMap<Integer, Double> sortMap = new HashMap<>(); 
+        for(int i = 0; i < documentSize; i++){ 
+            sortMap.put(i, Qid[i]);
+            //System.out.println(Qid[i]);
+        }
+
+        ArrayList<Integer> sortedList = DocumentSort(sortMap);
+        for(int i = 0; i < 3; i++){
+
+            int id = sortedList.get(i);
+
+            if(sortMap.get(id) - 0 == 0){
+                if(i == 0) System.out.println("검색 결과가 없습니다.");
+                return;
+            }
+
+            System.out.println(DocumentIdMap.get(id));
+        }
     }
 
     public double[] CalcSim(int documentSize, ArrayList<ArrayList<Double> > docWeight){
 
-        double[] Qid = new double[documentSize + 1];
+        double[] Qid = InnerProduct(documentSize, docWeight);
         double[] divider1 = new double[documentSize + 1];
         double[] divider2 = new double[documentSize + 1];
 
         for(int i = 1; i <= documentSize; i++){
             for(int j = 0; j < docWeight.get(i).size(); j+=2){
-                Qid[i] += docWeight.get(i).get(j) * docWeight.get(i).get(j + 1); 
+                
                 divider1[i] += docWeight.get(i).get(j) * docWeight.get(i).get(j);
                 divider2[i] += docWeight.get(i).get(j + 1) * docWeight.get(i).get(j + 1);
             }
             double div1 = Math.sqrt(divider1[i]), div2 = Math.sqrt(divider2[i]);
             if(div1 != 0 && div2 != 0)
                 Qid[i] = Qid[i] / ( Math.sqrt(divider1[i]) * Math.sqrt(divider2[i]) );
+                Qid[i] = Math.round(Qid[i] * 100) / 100.0;
         }
+
         return Qid;
     }
 
