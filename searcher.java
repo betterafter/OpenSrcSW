@@ -100,21 +100,6 @@ public class searcher{
                 docWeight.get(id).add((double)value.get(i + 1));
             }
         }
-
-        double[] Qid = CalcSim(documentSize,docWeight);
-
-        HashMap<Integer, Double> sortMap = new HashMap<>(); 
-        for(int i = 0; i < documentSize; i++){ 
-            sortMap.put(i, Qid[i]);
-            //System.out.println(Qid[i] + " ");
-        }
-        ArrayList<Integer> sortedList = DocumentSort(sortMap);
-            
-        for(int i = 0; i < 3; i++){
-            int id = sortedList.get(i);
-            System.out.println(DocumentIdMap.get(id));
-        }
-    
     }
 
     public double[] InnerProduct(int documentSize, ArrayList<ArrayList<Double> > docWeight){
