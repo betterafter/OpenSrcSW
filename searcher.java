@@ -137,13 +137,6 @@ public class searcher{
         return Qid;
     }
 
-    // 0. master 브랜치에 체크아웃한다.
-    // 1. searcher를 searcher_2의 내용으로 바꾼다. 이 때 바뀔 내용은 지운다. master에 우선 커밋 & 푸쉬한다.
-    // 2. feature -> master로 머지해서 충돌을 발생시켜본다. 완전 같은 내용에서 CalcSim만 조금 달라졌으니 충돌이 날 것이다.
-    // 3. feature 브랜치로 이동해서 CalcSim을 InnerProduct로 바꾼다. (searcher3로 바꾼다)
-    // 4. master 브랜치로 체크아웃한 후 feature 브랜치를 머지한다.
-    // 5. master 브랜치의 머지된 searcher의 CalcSim에서 InnerProduct를 사용하도록 구현한다.
-
     public static ArrayList<Integer> DocumentSort(final HashMap<Integer, Double> sortMap){
         ArrayList<Integer> sortedList = new ArrayList<>();
         sortedList.addAll(sortMap.keySet());
