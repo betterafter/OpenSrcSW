@@ -105,15 +105,6 @@ public class searcher{
     public double[] CalcSim(int documentSize, ArrayList<ArrayList<Double> > docWeight){
 
         double[] Qid = new double[documentSize + 1];
-        
-
-        return Qid;
-    }
-
-
-    public double[] InnerProduct(int documentSize, ArrayList<ArrayList<Double> > docWeight){
-
-        double[] Qid = new double[documentSize + 1];
         for(int i = 1; i <= documentSize; i++){
             for(int j = 0; j < docWeight.get(i).size(); j+=2){
                 Qid[i] += docWeight.get(i).get(j) * docWeight.get(i).get(j + 1); 
@@ -121,6 +112,7 @@ public class searcher{
         }
         return Qid;
     }
+
 
     public static ArrayList<Integer> DocumentSort(final HashMap<Integer, Double> sortMap){
         ArrayList<Integer> sortedList = new ArrayList<>();
