@@ -152,6 +152,7 @@ public class searcher{
         for(int i = 1; i <= documentSize; i++){
             for(int j = 0; j < docWeight.get(i).size(); j+=2){
                 Qid[i] += docWeight.get(i).get(j) * docWeight.get(i).get(j + 1); 
+                System.out.println(Qid[i]);
             }
         }
 
