@@ -101,7 +101,7 @@ public class searcher{
             }
         }
 
-        double[] Qid = InnerProduct(documentSize,docWeight);
+        double[] Qid = CalcSim(documentSize,docWeight);
 
         HashMap<Integer, Double> sortMap = new HashMap<>(); 
         for(int i = 0; i < documentSize; i++){ 
