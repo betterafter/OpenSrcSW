@@ -123,7 +123,7 @@ public class searcher{
         }
     }
 
-    public double[] CalcSim(int documentSize, ArrayList<ArrayList<Double> > docWeight){
+    public double[] InnerProduct(int documentSize, ArrayList<ArrayList<Double> > docWeight){
 
         double[] Qid = InnerProduct(documentSize, docWeight);
         double[] divider1 = new double[documentSize + 1];
