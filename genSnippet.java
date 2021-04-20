@@ -15,7 +15,7 @@ public class genSnippet{
         
         // java midterm -f input.txt -q "키워드열"
         // String fileName = args[3];
-        String keyword = args[5];
+        String keyword = args[4];
 
         File file = new File("input.txt");
 
@@ -29,9 +29,6 @@ public class genSnippet{
         }
         bf.close();
 
-        for(int i = 0; i < list.size(); i++){
-            System.out.println(list.get(i));
-        }
         
         HashMap<String, Integer> m = new HashMap<>();
 
@@ -50,8 +47,9 @@ public class genSnippet{
             idx++;
         }
 
-        int size = list.size();
-        Integer[] res = new Integer[size];
+        Integer[] res = new Integer[]{
+            0, 0, 0, 0, 0
+        };
         for(int i = 0; i < list.size(); i++){
             String keyword1 = list.get(i);
 
