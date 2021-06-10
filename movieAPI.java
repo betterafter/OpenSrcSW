@@ -15,7 +15,7 @@ import org.json.simple.parser.JSONParser;
 
 
 
-public class week15 {
+public class movieAPI {
 
     public static void main(String[] args) {
         String clientId = "c1eRfX71iYDEvRi_73zM"; //애플리케이션 클라이언트 아이디값"
